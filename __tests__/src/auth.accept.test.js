@@ -18,10 +18,6 @@ describe('Authentication Server', () => {
     //mongoose.connection.close();
   });
 
-  // Note that these will actually be using the mocked models
-  // from the mock version of require-dir.  IOW .. no need to spin up
-  // a mongo server to run these tests. (we don't want to test mongo anyway!)
-
   it('gets a 401 on a bad login', () => {
     return superagent.get('http://localhost:3016/signin')
       .then(response => {
@@ -57,6 +53,20 @@ describe('Authentication Server', () => {
         expect(response.statusCode).toBe(200);
       })
       .catch(console.err);
+  });
+  it('should get a 400 in no request body is provided', () => {
+    return superagent.post('http://localhost:3016/')
+      .send()
+      .then(response => {
+        expect(response.statusCode).toBe(400);
+      })
+      .catch(console.err);
+  });
+  it('returns a status code of 404 for any routes that have not been registered', () => {
+    return superagent.get('http://localhost:3016/doesnotexist')
+      .then(response => {
+        expect(response.statusCode).toBe(404);
+      });
   });
 
 });
