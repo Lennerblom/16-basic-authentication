@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Lennerblom/16-basic-authentication.svg?branch=master)](https://travis-ci.org/Lennerblom/16-basic-authentication)
 # 16 Basic Authorization
 ___
 ###### TRAVIS: https://travis-ci.org/Lennerblom/16-basic-authentication
