@@ -1,4 +1,4 @@
-# 14 Relationship Modeling
+# 16 Basic Authorization
 ___
 ###### TRAVIS: https://travis-ci.org/Lennerblom/16-basic-authentication
 ###### HEROKU: https://basic-auth16.herokuapp.com/signin
